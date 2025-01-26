@@ -82,20 +82,13 @@ Para configurar e executar o projeto localmente, siga as etapas abaixo:
 
 5. Acesse a aplicação em [`localhost:3000`](http://localhost:3000).
 
-## Contribuição
+## Desenvolvedor
 
-Estamos animados para ter você como parte do nosso time! Veja como ajudar:
+**Diogo da Silva Santana**  
+Engenheiro de Software Sênior  
+Especialista em Front-end  
 
-1. Faça um fork do projeto.
-2. Crie uma branch para sua feature (`git checkout -b nome-da-feature`).
-3. Comite suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`).
-4. Faça o push para a branch (`git push origin nome-da-feature`).
-5. Abra um Pull Request.
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Sinta-se à vontade para entrar em contato ou se conectar através do LinkedIn:  
+[LinkedIn de Diogo da Silva Santana](https://www.linkedin.com/in/diogosilvasantana/)
 
 ---
-
-Sinta-se à vontade para adicionar qualquer outra parte que julgue necessária para enriquecer seu `README.md`.
