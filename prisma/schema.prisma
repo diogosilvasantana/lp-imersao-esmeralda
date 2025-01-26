@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-1.0.x"]
+}
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Signup {
+  id              String   @id @default(cuid())
+  registerNumber  Int      @default(autoincrement()) @unique
+  fullName        String
+  birthDate       DateTime
+  email           String   @unique
+  whatsapp        String
+  address         String
+  city            String
+  state           String
+  singing         Boolean  @default(false)
+  dancing         Boolean  @default(false)
+  acting          Boolean  @default(false)
+  paymentStatus   PaymentStatus @default(PENDING)
+  paymentMethod   PaymentMethod?
+  paymentId       String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model WebhookEvent {
+  id        Int    @id @default(autoincrement())
+  eventId   String @unique
+  createdAt DateTime @default(now())
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  CANCELLED
+  FAILED
+}
+
+enum PaymentMethod {
+  CREDIT_CARD
+  BARCODE
+}

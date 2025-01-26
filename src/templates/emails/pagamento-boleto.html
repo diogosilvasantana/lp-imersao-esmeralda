@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pagamento do Boleto - Imersão Esmeralda</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .header {
+        background-color: #4a5f00;
+        padding: 15px;
+        border-radius: 8px 8px 0 0;
+        text-align: center;
+        color: white;
+      }
+      .content {
+        padding: 20px;
+      }
+      .content h2 {
+        color: #4a5f00;
+      }
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #333333;
+      }
+      .footer {
+        margin-top: 20px;
+        text-align: center;
+        color: #888888;
+        font-size: 12px;
+      }
+      .button-wrapper {
+        text-align: center;
+        margin: 20px 0;
+      }
+      .button {
+        display: inline-block;
+        padding: 15px 30px; /* Aumentado para tornar o botão maior */
+        background-color: #4a5f00;
+        color: #fff;
+        text-decoration: none; /* Remove underline */
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 18px; /* Aumentado o tamanho da fonte */
+      }
+      .button:hover {
+        opacity: 0.9; /* Efeito simples de hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Pagamento Pendente</h1>
+      </div>
+      <div class="content">
+        <h2>Prezado(a) {{firstName}},</h2>
+        <p>
+          Obrigado por se inscrever na Imersão Esmeralda! Para garantir sua
+          vaga, precisamos que o pagamento através do boleto bancário seja
+          concluído.
+        </p>
+        <p>Por favor, efetue o pagamento acessando o link do boleto abaixo:</p>
+        <div class="button-wrapper">
+          <a href="{{boletoUrl}}" class="button">
+            Clique aqui para visualizar seu boleto
+          </a>
+        </div>
+        <p>
+          Assim que o pagamento for realizado, você receberá a confirmação da
+          sua inscrição.
+        </p>
+        <p>
+          Dúvidas? Entre em contato no nosso Whatsapp:
+          <strong>(11) 3955-1615</strong>
+        </p>
+      </div>
+      <div class="footer">
+        <p>&copy; 2025 Proart Produções. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -8,14 +8,31 @@ Esta aplicação é uma plataforma [descreva brevemente o propósito do projeto]
 
 ## Protótipo
 
-Para visualizar o protótipo do design do projeto, acesse o [link do Figma](#).
+Para visualizar o protótipo do design do projeto, acesse o [link do Figma](https://www.figma.com/design/xhZVw5S2IcXv1w0cgqkNKX/Landing-Page---Imers%C3%A2o-Esmeralda).
 
 ## Tecnologias Utilizadas
 
 - **Frontend**: Desenvolvido com **React/Next.js**
 - **Banco de Dados**: Utilizando **TypeOrm** com **Prisma** integrando o banco de dados **Postgres**
 - **Estilização**: Implementada com **Stitches** para um design coeso e responsivo
-- **Pagamento**: Integração com **Stripe**, incluindo Webhook para confirmação de pagamentos
+- **Validação de Formulário**: Implementada com **Zod** para garantir um gerenciamento preciso de dados do usuário
+- **Integração de Pagamento**: Integração com **Stripe**, incluindo Webhook para confirmação de pagamentos
+
+## Melhores Práticas
+
+- **Validação de Commits**: Utilizando o **Husky** com **eslint** para evitar commits com erros e códigos desnecessários/comentados
+- **Hooks Customizados**: Uso de `useMediaQuery` para verificar a resolução da tela e definir qual imagem deve ser carregada
+
+## Estrutura Adicional
+
+- **Pasta `templates`**: Contem templates de e-mails enviados aos usuários após o cadastro
+- **Pasta `_lib`**: Abriga configurações de inicialização do **Prisma** e do serviço **AWS SES**
+
+## Endpoints API
+
+- **POST /api/signup**: Responsável pelo cadastro dos usuários no sistema
+- **POST /api/checkout**: Chamado após o cadastro para direcionamento à página de pagamento
+- **POST /api/webhook**: Utilizado pelo Stripe para notificar o sistema de um pagamento concluído, atualizando o `paymentStatus` do usuário de *PENDING* para *PAID*
 
 ## Serviços em Produção
 
@@ -24,15 +41,15 @@ A aplicação está otimizada para produção usando uma variedade de serviços 
 - **AWS Amplify**: Hospedagem fullstack da aplicação
 - **AWS SES**: Envio de e-mails de confirmação e lembretes de pagamentos
 - **AWS Route 53**: Gerencia o domínio `grupoproart.com.br`
-- **AWS RDS**: Solução de banco de dados Postgres gerenciado
+- **AWS RDS**: Banco de dados Postgres gerenciado
 - **AWS CloudWatch**: Monitoramento e logs
 
 ## Funcionalidades Principais
 
-- **Autenticação de Usuários**: Sistema seguro de login e cadastro
-- **Processamento de Pagamento**: Complemente simples e seguro pelo **Stripe**
-- **Gestão de Conteúdo**: Interface para o gerenciamento prático de dados com **Prisma**
-- [Enumere outras funcionalidades principais relevantes]
+- **Cadastro de Usuários**: Sistema de registro de novos usuários por meio de um formulário
+- **Processamento de Pagamento**: Implementado de forma simples e segura usando **Stripe**
+- **Gestão de Dados**: Utiliza **Prisma** para manipular e gerenciar eficientemente os dados
+- **Validações Rigorosas**: Formulários são validados com precisão utilizando **Zod**
 
 ## Configuração Local
 
@@ -49,12 +66,13 @@ Para configurar e executar o projeto localmente, siga as etapas abaixo:
     npm install
     ```
 
-3. **Configurar variáveis de ambiente**: Crie um arquivo `.env` com as seguintes variáveis:
+3. **Configurar variáveis de ambiente**: Crie um arquivo `.env` com as seguintes variáveis (o projeto possui o arquivo `.env.example`):
     ```env
     DATABASE_URL=<sua_url_de_conexao_postgres>
     STRIPE_SECRET_KEY=<sua_chave_secreta_stripe>
-    AWS_ACCESS_KEY_ID=<sua_aws_access_key_id>
-    AWS_SECRET_ACCESS_KEY=<sua_aws_secret_access_key>
+    STRIPE_WEBHOOK_SECRET=<sua_chave_secreta_stripe>
+    MYAPP_AWS_ACCESS_KEY_ID=<sua_aws_access_key_id>
+    MYAPP_AWS_SECRET_ACCESS_KEY=<sua_aws_secret_access_key>
     ```
 
 4. **Executar aplicação**:
@@ -68,11 +86,11 @@ Para configurar e executar o projeto localmente, siga as etapas abaixo:
 
 Estamos animados para ter você como parte do nosso time! Veja como ajudar:
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b nome-da-feature`)
-3. Comite suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
-4. Faça o push para a branch (`git push origin nome-da-feature`)
-5. Abra um Pull Request
+1. Faça um fork do projeto.
+2. Crie uma branch para sua feature (`git checkout -b nome-da-feature`).
+3. Comite suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`).
+4. Faça o push para a branch (`git push origin nome-da-feature`).
+5. Abra um Pull Request.
 
 ## Licença
 
@@ -80,8 +98,4 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 
 ---
 
-Se houver interesse ou sugestões, sinta-se à vontade para entrar em contato!
-
----
-
-> **Nota:** Este modelo é uma proposta básica. Para um projeto específico, é aconselhável adicionar seções baseadas em outras necessidades, como documentação de API, testes, ou instruções específicas do usuário.
+Sinta-se à vontade para adicionar qualquer outra parte que julgue necessária para enriquecer seu `README.md`.
