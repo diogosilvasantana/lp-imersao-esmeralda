@@ -1,0 +1,32 @@
+name: Prisma Setup and Migration
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  setup-and-migrate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16" # Use a versão do Node.js requerida pelo seu projeto
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Prisma Migrate
+        env:
+          DATABASE_URL: postgresql://neondb_owner:npg_ymWZFn41ktBv@ep-holy-darkness-a4rpc0sp-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require
+        run: npx prisma migrate deploy
+
+      - name: Prisma deploy (optional step)
+        env:
+          DATABASE_URL: postgresql://neondb_owner:npg_ymWZFn41ktBv@ep-holy-darkness-a4rpc0sp-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require
+        run: npx prisma generate

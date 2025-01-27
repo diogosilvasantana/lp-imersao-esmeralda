@@ -1,6 +1,10 @@
-# Nome do Projeto
+# Landing Page - Imersão Esmeralda
 
-> Breve descrição do seu projeto.
+A Landing Page da Imersão Esmeralda é um portal digital desenvolvido para o evento exclusivo da Proart Produções. Esta plataforma permite que os usuários interessados registrem sua participação, abrangendo desde o cadastro pessoal até a facilitação do pagamento da taxa de inscrição necessária para o evento. Integrando tecnologia moderna e serviços seguros, a aplicação oferece uma experiência de usuário simplificada e eficiente, garantindo que todos os participantes possam confirmar sua presença com facilidade.
+
+## URL do Site em Produção
+
+https://imersaoesmeralda.grupoproart.com.br
 
 ## Visão Geral
 
@@ -9,6 +13,12 @@ Esta aplicação é uma plataforma [descreva brevemente o propósito do projeto]
 ## Protótipo
 
 Para visualizar o protótipo do design do projeto, acesse o [link do Figma](https://www.figma.com/design/xhZVw5S2IcXv1w0cgqkNKX/Landing-Page---Imers%C3%A2o-Esmeralda).
+
+## Arquitetura
+
+![Desenho da Arquitetura](./docs/diagrama-arquitetura.png)
+
+Para uma explicação detalhada da arquitetura, acesse o [link da explicação](./docs/explicacao-arquitetura.md).
 
 ## Tecnologias Utilizadas
 
@@ -92,3 +102,5 @@ Sinta-se à vontade para entrar em contato ou se conectar através do LinkedIn:
 [LinkedIn de Diogo da Silva Santana](https://www.linkedin.com/in/diogosilvasantana/)
 
 ---
+
+> **Nota:** O desenho da arquitetura deve ser salvo na rota especificada no local da imagem do README. O link para a explicação em detalhes precisa apontar para o arquivo dentro da pasta "docs" contendo a documentação.
