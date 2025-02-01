@@ -23,7 +23,7 @@ jobs:
 
       - name: Run Prisma Migrate
         env:
-          DATABASE_URL: postgresql://neondb_owner:npg_ymWZFn41ktBv@ep-holy-darkness-a4rpc0sp-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: npx prisma migrate deploy
 
       - name: Prisma deploy (optional step)
